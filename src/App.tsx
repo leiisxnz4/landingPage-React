@@ -3,7 +3,9 @@ import {
   Hero, 
   Features, 
   MoreInformation,
-  Testimonials
+  Testimonials,
+  Form,
+  Footer,
 } from './components'
 
 function App() {
@@ -27,11 +29,16 @@ function App() {
         /> 
       </section>
 
-      <section className='bg-Navy-900 p-6'>
+      <section className='bg-Navy-900 p-6 pb-[300px]'>
         <Hero />
         <Features />
         <MoreInformation />
         <Testimonials />
+      </section>
+
+      <section className='bg-Navy-950 relative'>
+        <Form />
+        <Footer />
       </section>
       
     </main>
