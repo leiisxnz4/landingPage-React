@@ -1,70 +1,22 @@
-import type { JSX } from "react";
+import { conditions, contactInformation, medias, pages } from "../../common/constants";
 import { ContactItem } from "./contact-item";
 import { FooterListItem } from "./footer-list-item";
-import { FacebookIcon } from "./facebook-icon";
-import { XIcon } from "./x-icon";
-import { InstagramIcon } from "./intagram-icon";
-
-interface ContactInformation {
-  text: string;
-  iconUrl: string;
-  alt: string;
-}
-
-const contactInformation: ContactInformation[] = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptas nulla recusandae vel facere ab beatae culpa tenetur. Tempora, voluptas quisquam. Eum dignissimos quis nihil sequi et rerum quos tempora.",
-    iconUrl: "/images/icon-location.svg",
-    alt: "location",
-  },
-  {
-    text: "+1-543-123-4567",
-    iconUrl: "/images/icon-phone.svg",
-    alt: "icon phone",
-  },
-  {
-    text: "example@fylo.com",
-    iconUrl: "/images/icon-email.svg",
-    alt: "icon email",
-  },
-];
-
-const pages: string[] = ["About us", "Jobs", "Press", "Blog"];
-
-const conditions: string[] = ["Contact us", "Terms", "Privacy"];
-
-interface Media {
-  text: string;
-  icon: JSX.Element;
-}
-
-const medias: Media[] = [
-  {
-    text: "Facebook",
-    icon: <FacebookIcon />,
-  },
-  {
-    text: "Twitter",
-    icon: <XIcon />,
-  },
-  {
-    text: "Instagram",
-    icon: <InstagramIcon />,
-  }
-];
 
 export const Footer = () => {
   return (
-    <footer className="pt-[260px] pb-[60px] px-6">
+    <footer className="pt-[260px] pb-[160px] px-6">
       <img className="mb-10" src="/images/logo.svg" alt="Logo" />
 
-      <div className="flex flex-col gap-4">
-        {contactInformation.map((contact: ContactInformation) => (
-          <ContactItem key={contact.alt} {...contact} />
-        ))}
+      <div className="flex flex-col gap-4 md:flex-row">
+        <ContactItem styles="flex-1" {...contactInformation[0]} />
+        <div className="flex flex-col gap-4 flex-1">
+          {contactInformation.slice(1,4).map((contact: any) => (
+            <ContactItem key={contact.alt} {...contact} />
+          ))}
+        </div>
       </div>
 
-      <div className="flex flex-col gap-8 mt-16">
+      <div className="flex flex-col gap-8 mt-16 md:flex-row md:gap-24">
         <ul>
           {pages.map((page: string) => (
             <FooterListItem key={page} text={page} />
