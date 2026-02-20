@@ -2,7 +2,7 @@
 
 export const MoreInformation = () => {
   return (
-    <div className="my-40 md:flex md:items-center md:gap-4"> 
+    <div className="my-40 md:flex md:items-center md:gap-4 max-w-[920px] mx-auto"> 
 
       <img className="mb-12 md:w-[380px]" src="/images/illustration-stay-productive.png" alt="Stay productive illustration" />  
       

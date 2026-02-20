@@ -13,7 +13,7 @@ function App() {
   return (
     <main className='m-auto'>
       
-      <section className='bg-gray-400 p-6 h-[420px] relative md:h-[640px]'>
+      <section className='bg-Navy-850 p-6 h-[420px] relative md:h-[640px]'>
         <Header />
 
         <img 
@@ -23,9 +23,14 @@ function App() {
         />
 
         <img 
-          className='absolute bottom-0 left-0 w-full'
+          className='absolute bottom-0 left-0 w-full xl:hidden'
           src="/images/bg-curvy-mobile.svg" 
           alt="bg curvy mobile" 
+        />         
+        <img 
+          className='absolute bottom-0 left-0 w-full hidden xl:block'
+          src="/images/bg-curvy-desktop.svg" 
+          alt="bg curvy desktop" 
         /> 
       </section>
 
